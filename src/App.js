@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
+import './assets/css/estilo.css';
+
 function App() {
   return (
     <BrowserRouter>
