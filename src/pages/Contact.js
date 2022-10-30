@@ -16,10 +16,10 @@ const Home = () => {
                     <Card.Body>
                         <Card.Title className="fs-1">Contato</Card.Title>
                         <Card.Text>
-                            <p>Possui alguma dúvida ou deseja obter maiores informações sobre a maior empresa de distribuição de jogos digitais?<br />
-                            Preencha os campos abaixo para que possamos entrar em contato assim que possível.</p>
-                            <FormContact />
+                            Possui alguma dúvida ou deseja obter maiores informações sobre a maior empresa de distribuição de jogos digitais?<br />
+                            Preencha os campos abaixo para que possamos entrar em contato assim que possível.
                         </Card.Text>
+                        <FormContact />
                     </Card.Body>
                 </Card>
             </main>
