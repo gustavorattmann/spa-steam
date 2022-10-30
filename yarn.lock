@@ -7616,6 +7616,11 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
+react-telefone-brasileiro@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-telefone-brasileiro/-/react-telefone-brasileiro-1.0.5.tgz#65ebeb909422baeda0da6a21406a015334d33879"
+  integrity sha512-dKmcY5ak0ji8zOYqh/P6Ka8EggVezcqj3kx1s2Ga7Xq94eyZDERIXj327bvqHDbpj/bksBHhSVEVeA0nhnOxYw==
+
 react-transition-group@^4.4.2:
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.5.tgz#e53d4e3f3344da8521489fbef8f2581d42becdd1"
@@ -8430,6 +8435,11 @@ svgo@^2.7.0:
     csso "^4.2.0"
     picocolors "^1.0.0"
     stable "^0.1.8"
+
+sweetalert2@^11.6.4:
+  version "11.6.4"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.6.4.tgz#8d0bcfcc9af415319f9e93262923b49834da729c"
+  integrity sha512-EfvbqpApvOLbJ7UehO4rjmlltramOGVNpWhh9hBDyeSP1WhoslpmYUXZXI8AiC77Yl6esCfRcWXpzCAKkbvcgg==
 
 symbol-tree@^3.2.4:
   version "3.2.4"
