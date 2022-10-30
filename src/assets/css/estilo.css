@@ -1,17 +1,10 @@
-body {
+main {
     background: url('../images/bg.jpeg');
     background-repeat: no-repeat;
     background-attachment: scroll;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
+    background-position: center;
+    background-size: cover;
+    background-origin: padding-box;
 }
 
 .navbar .nav-link, footer p {
