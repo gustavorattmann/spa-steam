@@ -49,8 +49,6 @@ const FormContact = () => {
 
     var limpaTelefone = telefone.replace(/\D/g, '');
 
-    console.log(limpaTelefone.length)
-
     if (nome === '') {
       textoNome.innerText = 'Campo nome é obrigatório!';
       textoNome.classList.remove('invisible');
