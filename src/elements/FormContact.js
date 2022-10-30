@@ -1,34 +1,118 @@
+import { useState } from 'react';
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
+import Swal from 'sweetalert2';
+
+import TelefoneBrasileiroInput from 'react-telefone-brasileiro';
+
 const FormContact = () => {
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [mensagem, setMensagem] = useState('');
+
+  const enviarComentario = (event) => {
+    event.preventDefault();
+
+    if (validarContato()) {
+      Swal.fire({
+        title: 'Sucesso',
+        text: 'Contato enviado com sucesso!',
+        icon: 'success'
+      });
+    } else {
+      Swal.fire({
+        title: 'Alerta',
+        html: 'Falha ao enviar contato!<br />Favor revisar campos.',
+        icon: 'warning'
+      });
+    }
+  }
+
+  const validarContato = () => {
+    const textoNome = document.getElementById('texto-nome');
+    const textoEmail = document.getElementById('texto-email');
+    const textoTelefone = document.getElementById('texto-telefone');
+    const textoMensagem = document.getElementById('texto-mensagem');
+
+    textoNome.classList.add('invisible');
+    textoEmail.classList.add('invisible');
+    textoTelefone.classList.add('invisible');
+    textoMensagem.classList.add('invisible');
+
+    textoNome.innerText = '';
+    textoEmail.innerText = '';
+    textoTelefone.innerText = '';
+    textoMensagem.innerText = '';
+
+    var limpaTelefone = telefone.replace(/\D/g, '');
+
+    console.log(limpaTelefone.length)
+
+    if (nome === '') {
+      textoNome.innerText = 'Campo nome é obrigatório!';
+      textoNome.classList.remove('invisible');
+
+      return false;
+    } else if (email === '') {
+      textoEmail.innerText = 'Campo e-mail é obrigatório!';
+      textoEmail.classList.remove('invisible');
+
+      return false;
+    } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) === false) {
+      textoEmail.innerText = 'E-mail inválido!';
+      textoEmail.classList.remove('invisible');
+
+      return false;
+    } else if (limpaTelefone === '') {
+      textoTelefone.innerText = 'Campo telefone é obrigatório!';
+      textoTelefone.classList.remove('invisible');
+
+      return false;
+    } else if (limpaTelefone.length > 11 || limpaTelefone.length < 10) {
+      textoTelefone.innerText = 'Telefone inválido!';
+      textoTelefone.classList.remove('invisible');
+
+      return false;
+    } else if (mensagem === '') {
+      textoMensagem.innerText = 'Campo mensagem é obrigatório!';
+      textoMensagem.classList.remove('invisible');
+      
+      return false;
+    }
+
+    return true;
+  }
+
   return (
-    <Form>
+    <Form onSubmit={enviarComentario} noValidate>
       <Form.Group className="mb-1" controlId="input-nome">
-        <Form.Label>Nome:</Form.Label>
-        <Form.Control type="text" placeholder="Preencher nome" />
-        <Form.Text className="invisible text-danger">
+        <Form.Label>Nome: <span className="text-danger">*</span></Form.Label>
+        <Form.Control type="text" placeholder="Preencher nome" value={nome} onChange={(e) => setNome(e.target.value.trim())} maxLength="50" />
+        <Form.Text className="invisible text-danger" id="texto-nome">
         </Form.Text>
       </Form.Group>
       
       <Form.Group className="mb-1" controlId="input-email">
-        <Form.Label>Email:</Form.Label>
-        <Form.Control type="email" placeholder="Preencher e-mail" />
-        <Form.Text className="invisible text-danger">
+        <Form.Label>Email: <span className="text-danger">*</span></Form.Label>
+        <Form.Control type="email" placeholder="Preencher e-mail" value={email} onChange={(e) => setEmail(e.target.value.trim())} maxLength="50" />
+        <Form.Text className="invisible text-danger" id="texto-email">
         </Form.Text>
       </Form.Group>
 
       <Form.Group className="mb-1" controlId="input-telefone">
-        <Form.Label>Telefone:</Form.Label>
-        <Form.Control type="text" placeholder="Preencher telefone" />
-        <Form.Text className="invisible text-danger">
+        <Form.Label>Telefone: <span className="text-danger">*</span></Form.Label>
+        <Form.Control as={TelefoneBrasileiroInput} type="text" placeholder="Preencher telefone"  value={telefone} onChange={(e) => setTelefone(e.target.value.trim())} temDDD separaDDD />
+        <Form.Text className="text-danger" id="texto-telefone">
         </Form.Text>
       </Form.Group>
 
       <Form.Group className="mb-1" controlId="input-mensagem">
-        <Form.Label>Mensagem:</Form.Label>
-        <Form.Control as="textarea" placeholder="Preencher mensagem" rows="5" />
-        <Form.Text className="invisible text-danger">
+        <Form.Label>Mensagem: <span className="text-danger">*</span></Form.Label>
+        <Form.Control as="textarea" placeholder="Preencher mensagem" rows="5" value={mensagem} onChange={(e) => setMensagem(e.target.value.trim())} maxLength="1000" />
+        <Form.Text className="invisible text-danger" id="texto-mensagem">
         </Form.Text>
       </Form.Group>
 
