@@ -71,7 +71,7 @@ const FormContact = () => {
       inputEmail.classList.add('border', 'border-danger');
 
       return false;
-    } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) === false) {
+    } else if (/^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/.test(email) === false) {
       textoEmail.innerText = 'E-mail inválido!';
       textoEmail.classList.remove('invisible');
       inputEmail.classList.add('border', 'border-danger');
