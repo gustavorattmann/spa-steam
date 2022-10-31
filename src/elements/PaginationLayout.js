@@ -19,7 +19,7 @@ const PaginationLayout = ({ currentPage, total, limit, onPageChange }) => {
     ));
 
     return (
-        <Pagination variant="dark" className="justify-content-end">
+        <Pagination className="justify-content-center justify-content-md-end">
             <Pagination.First onClick={() => onPageChange(1)} />
             <Pagination.Prev onClick={() => onPageChange(currentPage - 1)} />
             {items}
