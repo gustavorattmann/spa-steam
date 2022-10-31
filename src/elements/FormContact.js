@@ -131,7 +131,7 @@ const FormContact = () => {
       </Form.Group>
 
       <Button className="float-end" variant="primary" type="submit">
-        Submit
+        Enviar
       </Button>
     </Form>
   );
