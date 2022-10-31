@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <Fragment>
             <Header />
-            <main className="d-flex flex-row align-items-center justify-content-center py-5">
+            <main className="d-flex flex-column justify-content-start align-items-center flex-grow-1 py-5">
                 <Card className="p-4" style={{ width: '80%', background: 'rgba(255, 255, 255, .85)' }}>
                     <Card.Body>
                         <Card.Title className="fs-1">Sobre a Steam</Card.Title>
