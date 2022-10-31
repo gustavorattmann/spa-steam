@@ -17,6 +17,22 @@ main {
     color: #b8b6b4;
 }
 
+.card-home, .card-about, .card-contact {
+    background: rgba(255, 255, 255, .85);
+}
+
+.card-home {
+    width: 90%;
+}
+
+.card-about {
+    width: 80%;
+}
+
+.card-contact {
+    width: 60%;
+}
+
 .porcentagem {
     font-size: 25px !important;
 }
@@ -38,4 +54,20 @@ main {
     border-bottom: 1px solid #738895;
     box-shadow: 0 0 2px #000;
     transform: skewY(-15deg);
+}
+
+@media (max-width: 767px) {
+    .card-home, .card-about, .card-contact {
+        width: 98%;
+    }
+}
+
+@media (max-width: 535px) {
+    .navbar-brand {
+        margin-right: 0 !important;
+    }
+
+    .navbar-nav {
+        text-align: center !important;
+    }
 }
