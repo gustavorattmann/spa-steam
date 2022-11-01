@@ -48,7 +48,7 @@ const GraphSteamMostPlayed = () => {
                     var picoDiario = String(jogos[i].pico).replaceAll(',', '.');
     
                     listaJogos[i] = {
-                        id: i + 1,
+                        id: jogos[i].id,
                         game: gameTd,
                         price: precoTd,
                         players: jogandoAgora,
