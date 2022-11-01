@@ -13,7 +13,7 @@ const GraphSteamMostPlayed = () => {
         const buscarGrafico = async () => {
             let request = {
                 method: 'get',
-                url: `http://localhost:8000/mais-jogados/${paginaAtual}`
+                url: `https://api-steam-graph.herokuapp.com/mais-jogados/${paginaAtual}`
             }
         
             await axios(request)
